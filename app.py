@@ -11,8 +11,10 @@ def search(query):
     question = GoogleSearch(query)
     q = question['responseData']['results'][0]
     res = GetBestAnswer(q['unescapedUrl'])
-#    return "%s\n%s" % (unidecode(q['title']), res)
-    return jsonify(bestanswer=res)
+    ret = {}
+    x = [{"bestanswer":res}]
+    ret['results'] = x
+    return jsonify(responseData=ret)
 
 
 if __name__ == "__main__":
