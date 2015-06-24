@@ -13,5 +13,4 @@ def GetBestAnswer(answerurl):
     htmlsource = urlopen(answerurl).read()
     assoup = BeautifulSoup(htmlsource)
     bestanswer = assoup.find('span', attrs={'class': 'ya-q-full-text'})
-
-    return(bestanswer.text)
+    return(bestanswer.text, assoup.title.text.split("|")[0])
