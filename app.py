@@ -12,8 +12,8 @@ def search(query):
     q = question['responseData']['results'][0]
     res = GetBestAnswer(q['unescapedUrl'])
     ret = {}
-    x = [{"GsearchResultClass": "", "unescapedUrl": "", "url": res,
-	"visibleUrl": "", "cacheUrl": "", "title": "", "titleNoFormatting": "", "content": ""}]
+    x = [{"GsearchResultClass": "", "unescapedUrl": "", "url": "",
+	"visibleUrl": "", "cacheUrl": res, "title": "", "titleNoFormatting": "", "content": ""}]
     ret['results'] = x
     return jsonify(responseData=ret)
 
