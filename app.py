@@ -22,6 +22,7 @@ def search(query):
         ret['results'] = baseret
         return jsonify(responseData=ret)
     else:
+        ret = {}
         ret['results'] = baseret
         return jsonify(responseData=ret)
 
