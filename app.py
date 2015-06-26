@@ -8,11 +8,10 @@ app = Flask(__name__)
 @app.route('/search/<query>')
 def search(query):
     question = GoogleSearch(query)
+    baseret = [{"GsearchResultClass": "Erro: Tente outra busca",  "unescapedUrl": "Erro: Tente outra busca",  "url": "Erro: Tente outra busca",
+                "visibleUrl": "Erro: Tente outra busca",  "cacheUrl": "Erro: Tente outra busca",  "title": "Erro: Tente outra busca",  "titleNoFormatting": "Erro: Tente outra busca",  "content": "Erro: Tente outra busca"}]
 
     if question:
-        baseret = [{"GsearchResultClass": "Erro: Tente outra busca",  "unescapedUrl": "Erro: Tente outra busca",  "url": "Erro: Tente outra busca",
-                    "visibleUrl": "Erro: Tente outra busca",  "cacheUrl": "Erro: Tente outra busca",  "title": "Erro: Tente outra busca",  "titleNoFormatting": "Erro: Tente outra busca",  "content": "Erro: Tente outra busca"}]
-
         if question['responseData']['results']:
             q = question['responseData']['results'][0]
             res = GetBestAnswer(q['unescapedUrl'])
