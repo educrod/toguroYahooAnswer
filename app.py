@@ -22,7 +22,8 @@ def search(query):
         ret['results'] = baseret
         return jsonify(responseData=ret)
     else:
-        return jsonify(responseData=baseret)
+        ret['results'] = baseret
+        return jsonify(responseData=ret)
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
