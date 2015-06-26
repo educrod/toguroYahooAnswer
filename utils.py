@@ -7,9 +7,9 @@ import re
 
 def GoogleSearch(query):
     try:
-        allask = requests.get("http://ajax.googleapis.com/ajax/services/search/web?v=1.0&q=site:br.answers.yahoo.com %s" % (query)).json()
-        if allsk.status_code == 200:
-            return(allask)
+        allask = requests.get("http://ajax.googleapis.com/ajax/services/search/web?v=1.0&q=site:br.answers.yahoo.com %s" % (query))
+        if allask.status_code == 200:
+            return(allask.json())
         else:
             return(False)
     except:
